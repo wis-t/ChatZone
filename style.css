@@ -1,20 +1,267 @@
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#111}
-body{display:flex;justify-content:center}
-.phone{width:100%;max-width:690px;min-height:100vh;padding:0 29px 35px;position:relative}
-.hero-banner{width:100%;margin:10px auto 24px;overflow:hidden;border-radius:14px}
-.hero-banner img{display:block;width:100%;height:auto}
-.demo-badge{margin:0 0 18px;text-align:center;color:#687482;font-size:12px;font-weight:700;letter-spacing:.5px}
-.facebook-logo{width:82px;height:82px;margin:0 auto 42px;border-radius:50%;background:#1877f2;color:#fff;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:69px;font-weight:700;line-height:1;padding-top:8px}
-.separator{height:1px;background:#d8dde2}
-.notice{padding-top:17px}
-.notice p{margin:0;font-size:25px;line-height:1.42}
-.notice a{display:block;margin-top:5px;color:#1877f2;font-size:25px;font-weight:600;text-decoration:none}
-.demo-form{margin-top:17px}
-.field{height:106px;margin-top:17px;padding:25px 28px;border:2px solid #dfe4e9;border-radius:28px;color:#727c87;font-size:20px;display:flex;align-items:flex-start}
-.field span{display:block}
-.login{width:100%;height:80px;margin-top:18px;border:0;border-radius:42px;background:#1877f2;color:#fff;font-size:25px;cursor:pointer}
-.forgot{display:block;width:100%;margin-top:47px;border:0;background:transparent;text-align:center;color:#111;font-size:24px;text-decoration:none;cursor:pointer}
-.message{display:none;margin:22px 0 0;padding:12px;border-radius:10px;background:#f1f4f7;color:#34404b;text-align:center;font-size:14px;line-height:1.4}
-.message.show{display:block}
-@media(max-width:500px){.phone{padding:0 20px 30px}.hero-banner{margin-top:8px;margin-bottom:16px;border-radius:12px}.notice p,.notice a{font-size:21px}.field{font-size:19px}.login{font-size:22px}.forgot{font-size:21px}}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111827;
+}
+
+/* الصورة الموجودة في الأعلى */
+.hero-banner {
+  width: 92%;
+  max-width: 700px;
+  margin: 14px auto 22px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.hero-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* الصفحة */
+.phone {
+  width: 92%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 4px 40px;
+}
+
+/* شعار Facebook */
+.facebook-logo {
+  width: 54px;
+  height: 54px;
+  margin: 18px auto 20px;
+
+  border-radius: 50%;
+  background: #1877f2;
+
+  color: white;
+  font-size: 46px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  line-height: 1;
+}
+
+/* الخط الفاصل */
+.separator {
+  width: 100%;
+  height: 1px;
+  background: #dddfe2;
+  margin-bottom: 25px;
+}
+
+/* النص */
+.notice p {
+  margin: 0 0 8px;
+
+  font-size: 21px;
+  line-height: 1.42;
+  font-weight: 400;
+}
+
+/* رابط تعديل الإعدادات */
+.notice a {
+  display: inline-block;
+
+  color: #1877f2;
+  font-size: 21px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  margin-bottom: 24px;
+}
+
+/* الخانات */
+.field {
+  position: relative;
+  width: 100%;
+  height: 72px;
+
+  margin-bottom: 14px;
+
+  border: 1.5px solid #d5d9df;
+  border-radius: 18px;
+
+  background: #fff;
+}
+
+/* عنوان الخانة */
+.field label {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  color: #737b87;
+
+  font-size: 18px;
+  pointer-events: none;
+
+  transition: 0.15s ease;
+}
+
+/* input */
+.field input {
+  width: 100%;
+  height: 100%;
+
+  padding: 25px 20px 5px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 18px;
+
+  background: transparent;
+
+  color: #111;
+  font-size: 19px;
+}
+
+/* عندما يبدأ المستخدم بالكتابة */
+.field:focus-within {
+  border-color: #1877f2;
+}
+
+.field:focus-within label {
+  top: 7px;
+  font-size: 12px;
+  color: #1877f2;
+}
+
+/* الزر الأزرق */
+.login {
+  width: 100%;
+  height: 62px;
+
+  margin-top: 4px;
+
+  border: none;
+  border-radius: 32px;
+
+  background: #1877f2;
+  color: white;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.15s ease;
+}
+
+.login:hover {
+  background: #166fe5;
+}
+
+.login:active {
+  transform: scale(0.99);
+}
+
+/* نسيت كلمة المرور */
+.forgot {
+  display: block;
+
+  margin-top: 28px;
+
+  text-align: center;
+
+  color: #111827;
+
+  font-size: 19px;
+  text-decoration: none;
+}
+
+/* رسالة Demo */
+.message {
+  display: none;
+
+  margin: 22px 0 0;
+
+  text-align: center;
+
+  font-size: 14px;
+  line-height: 1.4;
+
+  color: #555;
+}
+
+.message.show {
+  display: block;
+}
+
+/* ملاحظة الصفحة */
+.demo-note {
+  margin-top: 28px;
+
+  text-align: center;
+
+  font-size: 12px;
+  color: #888;
+}
+
+/* الهاتف */
+@media (max-width: 600px) {
+
+  .hero-banner {
+    width: 94%;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+  }
+
+  .phone {
+    width: 92%;
+    padding-bottom: 30px;
+  }
+
+  .facebook-logo {
+    width: 48px;
+    height: 48px;
+    font-size: 40px;
+    margin-top: 12px;
+  }
+
+  .notice p {
+    font-size: 18px;
+  }
+
+  .notice a {
+    font-size: 18px;
+  }
+
+  .field {
+    height: 68px;
+    border-radius: 17px;
+  }
+
+  .field label {
+    font-size: 16px;
+    top: 21px;
+  }
+
+  .field input {
+    font-size: 17px;
+  }
+
+  .login {
+    height: 58px;
+    font-size: 18px;
+  }
+
+  .forgot {
+    font-size: 17px;
+  }
+}
