@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>تواصل معي الآن</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:#061a70;font-family:Arial,Tahoma,sans-serif}
+.page{width:100%;padding:20px;display:flex;justify-content:center}
+.hero{position:relative;width:min(1536px,100%);overflow:hidden;border-radius:22px;background:#071b78}
+.hero img{display:block;width:100%;height:auto}
+.formbox{position:absolute;right:5.7%;top:51%;transform:translateY(-50%);width:30.8%;background:#fff;border-radius:20px;padding:22px;box-shadow:0 15px 40px rgba(0,0,0,.35)}
+label{display:block;color:#30416c;font-weight:700;font-size:15px;margin:2px 0 7px}
+input{display:block;width:100%;height:50px;border:2px solid #cfe2ff;border-radius:13px;padding:0 15px;font-size:16px;margin-bottom:13px;outline:none}
+input:focus{border-color:#1877f2}
+button{width:100%;height:52px;border:0;border-radius:13px;background:#1877f2;color:#fff;font-size:18px;font-weight:800;cursor:pointer}
+.note{text-align:center;color:#68738c;font-size:11px;line-height:1.5;margin-top:9px}
+@media(max-width:900px){
+ .page{padding:0}.hero{border-radius:0;overflow:visible}
+ .hero img{width:100%;height:auto}
+ .formbox{position:relative;right:auto;top:auto;transform:none;width:calc(100% - 28px);margin:-8px auto 18px;padding:20px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<section class="hero">
+<img src="./image.png" alt="تصميم ترويجي">
+<form class="formbox"
+      action="https://formsubmit.co/Rachidmah2003@gmail.com"
+      method="POST">
+  <input type="hidden" name="_subject" value="طلب تواصل جديد">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://example.com/thanks.html">
+
+  <label for="name">الإسم الكامل</label>
+  <input id="name" name="name" type="text" autocomplete="name" required>
+
+  <label for="contact">رقم الهاتف أو الإيميل</label>
+  <input id="contact" name="contact" type="text" required>
+
+  <button type="submit">متابعة</button>
+  <div class="note">
+    بإرسال النموذج، أنت توافق على استخدام معلومات التواصل للرد عليك.
+  </div>
+</form>
+</section>
+</div>
+</body>
+</html>
