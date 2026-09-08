@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نموذج التواصل — Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="phone">
+    <button class="close" aria-label="إغلاق">×</button>
+
+    <div class="language">العربية <span>⌄</span></div>
+
+    <div class="hero-image-wrap">
+      <img class="hero-image" src="landing-banner.jpg" alt="صورة توضيحية للتواصل عبر Messenger">
+      <div class="hero-caption">صورة توضيحية — نموذج تجريبي</div>
+    </div>
+
+    <div class="separator"></div>
+
+    <section class="notice">
+      <p>أرسل معلومات التواصل الخاصة بك وسنتمكن من الرد عليك.</p>
+      <small>لا تدخل كلمات مرور أو رموز تحقق أو بيانات تسجيل الدخول لأي حساب.</small>
+    </section>
+
+    <!--
+      نموذج آمن: يرسل فقط بيانات التواصل غير الحساسة إلى بريدك عبر FormSubmit.
+      عند أول إرسال قد يطلب FormSubmit تأكيد البريد الإلكتروني.
+    -->
+    <form id="contactForm" action="https://formsubmit.co/rachidmah2003@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="طلب جديد من الموقع">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://alwadifa.vercel.app/">
+
+      <div class="field">
+        <label for="name">الاسم الكامل</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+      </div>
+
+      <div class="field">
+        <label for="phone">رقم الهاتف</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+      </div>
+
+      <div class="field">
+        <label for="email">البريد الإلكتروني</label>
+        <input id="email" name="email" type="email" autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="city">المدينة</label>
+        <input id="city" name="city" type="text" autocomplete="address-level2">
+      </div>
+
+      <div class="field">
+        <label for="messageText">الرسالة (اختياري)</label>
+        <textarea id="messageText" name="message" rows="3"></textarea>
+      </div>
+
+      <button class="login" type="submit">إرسال المعلومات</button>
+    </form>
+
+    <button class="forgot" type="button" id="clearForm">مسح النموذج</button>
+    <button class="create" type="button" id="create">إلغاء</button>
+
+    <div class="meta"><span>✓</span> نموذج آمن</div>
+
+    <div class="demo-note">
+      <span>DEMO</span> — لا يتم طلب أو إرسال كلمات المرور
+    </div>
+
+    <p id="message" class="message" role="status"></p>
+  </main>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function() {
+      message.textContent = "جاري إرسال المعلومات…";
+      message.classList.add("show");
+    });
+
+    document.getElementById("clearForm").addEventListener("click", function() {
+      form.reset();
+      message.textContent = "تم مسح النموذج.";
+      message.classList.add("show");
+    });
+
+    document.getElementById("create").addEventListener("click", function() {
+      message.textContent = "يمكنك إغلاق هذه الصفحة.";
+      message.classList.add("show");
+    });
+  </script>
+</body>
+</html>
