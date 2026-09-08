@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Connexion — Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo-label">DEMO</div>
+<main class="screen">
+  <button class="close">×</button>
+  <div class="lang">Français (France) <span>⌄</span></div>
+
+  <div class="logo"><span>f</span></div>
+
+  <div class="line"></div>
+
+  <section class="info">
+    <div>Facebook demande et reçoit votre numéro de<br class="desktop"> téléphone par votre réseau mobile.</div>
+    <a href="#">Modifier les paramètres</a>
+  </section>
+
+  <div class="field">
+    <label>Numéro mobile ou e-mail</label>
+    <input id="identity" placeholder="+2126******540">
+  </div>
+
+  <div class="field password">
+    <label>Mot de passe</label>
+    <input id="password" type="password" placeholder="">
+  </div>
+
+  <button class="login" id="login">Se connecter</button>
+  <a class="forgot" href="#">Mot de passe oublié ?</a>
+
+  <button class="new-account" id="newAccount">Créer un nouveau compte</button>
+
+  <div class="meta"><span>∞</span> Meta</div>
+  <div id="msg" class="msg"></div>
+</main>
+<script>
+const msg=document.getElementById('msg');
+document.getElementById('login').onclick=()=>{
+  document.getElementById('password').value='';
+  msg.textContent='Mode démo : aucune donnée n’est envoyée ou enregistrée.';
+  msg.classList.add('show');
+};
+document.getElementById('newAccount').onclick=()=>{
+  msg.textContent='Mode démo : cette action est désactivée.';
+  msg.classList.add('show');
+};
+document.querySelectorAll('a').forEach(a=>a.onclick=e=>e.preventDefault());
+</script>
+</body>
+</html>
