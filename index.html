@@ -3,43 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Démo — Interface de connexion</title>
+  <title>Connexion — Démo</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <!-- الصورة في الأعلى -->
+  <div class="hero-banner">
+    <img src="hero.png" alt="Messenger">
+  </div>
+
   <main class="phone">
-    <div class="hero-banner">
-      <img src="hero.png" alt="Bannière promotionnelle Messenger — démonstration">
-    </div>
 
-    <div class="demo-badge">DÉMO — INTERFACE NON OFFICIELLE</div>
+    <div class="facebook-logo">f</div>
 
-    <div class="facebook-logo" aria-label="Logo de démonstration">f</div>
     <div class="separator"></div>
 
     <section class="notice">
-      <p>Cette page est une maquette visuelle destinée à une démonstration.</p>
-      <a href="#demo" onclick="return false">En savoir plus</a>
+      <p>
+        Facebook demande et reçoit votre numéro de téléphone
+        par votre réseau mobile.
+      </p>
+
+      <a href="#" onclick="return false;">
+        Modifier les paramètres
+      </a>
     </section>
 
-    <section id="demo" class="demo-form" aria-label="Maquette de formulaire">
-      <div class="field"><span>Numéro mobile ou e-mail</span></div>
-      <div class="field"><span>Mot de passe</span></div>
-      <button class="login" type="button" id="demoButton">Se connecter</button>
-    </section>
+    <form id="demoForm" autocomplete="off">
 
-    <button class="forgot" type="button" id="forgot">Mot de passe oublié ?</button>
-    <p id="message" class="message" role="status"></p>
+      <!-- البريد أو رقم الهاتف -->
+      <div class="field">
+        <label for="identity">
+          Numéro mobile ou e-mail
+        </label>
+
+        <input
+          id="identity"
+          type="text"
+          autocomplete="off"
+        >
+      </div>
+
+      <!-- كلمة المرور -->
+      <div class="field">
+        <label for="password">
+          Mot de passe
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          autocomplete="off"
+        >
+      </div>
+
+      <!-- الزر -->
+      <button class="login" type="submit">
+        Se connecter
+      </button>
+
+    </form>
+
+    <a class="forgot" href="#" onclick="return false;">
+      Mot de passe oublié ?
+    </a>
+
+    <p id="message" class="message"></p>
+
+    <div class="demo-note">
+      DEMO — Page non officielle
+    </div>
+
   </main>
 
   <script>
-    const message = document.getElementById('message');
-    const showDemoMessage = () => {
-      message.textContent = 'Mode démo : aucune donnée personnelle ou mot de passe n’est demandé, envoyé ou enregistré.';
-      message.classList.add('show');
-    };
-    document.getElementById('demoButton').addEventListener('click', showDemoMessage);
-    document.getElementById('forgot').addEventListener('click', showDemoMessage);
+    const form = document.getElementById("demoForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      message.textContent =
+        "Mode démo : aucune donnée n’est envoyée ou enregistrée.";
+
+      message.classList.add("show");
+    });
   </script>
+
 </body>
 </html>
