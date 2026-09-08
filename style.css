@@ -1,0 +1,20 @@
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#111}
+body{display:flex;justify-content:center}
+.phone{width:100%;max-width:690px;min-height:100vh;padding:0 29px 35px;position:relative}
+.hero-banner{width:100%;margin:10px auto 24px;overflow:hidden;border-radius:14px}
+.hero-banner img{display:block;width:100%;height:auto}
+.demo-badge{margin:0 0 18px;text-align:center;color:#687482;font-size:12px;font-weight:700;letter-spacing:.5px}
+.facebook-logo{width:82px;height:82px;margin:0 auto 42px;border-radius:50%;background:#1877f2;color:#fff;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:69px;font-weight:700;line-height:1;padding-top:8px}
+.separator{height:1px;background:#d8dde2}
+.notice{padding-top:17px}
+.notice p{margin:0;font-size:25px;line-height:1.42}
+.notice a{display:block;margin-top:5px;color:#1877f2;font-size:25px;font-weight:600;text-decoration:none}
+.demo-form{margin-top:17px}
+.field{height:106px;margin-top:17px;padding:25px 28px;border:2px solid #dfe4e9;border-radius:28px;color:#727c87;font-size:20px;display:flex;align-items:flex-start}
+.field span{display:block}
+.login{width:100%;height:80px;margin-top:18px;border:0;border-radius:42px;background:#1877f2;color:#fff;font-size:25px;cursor:pointer}
+.forgot{display:block;width:100%;margin-top:47px;border:0;background:transparent;text-align:center;color:#111;font-size:24px;text-decoration:none;cursor:pointer}
+.message{display:none;margin:22px 0 0;padding:12px;border-radius:10px;background:#f1f4f7;color:#34404b;text-align:center;font-size:14px;line-height:1.4}
+.message.show{display:block}
+@media(max-width:500px){.phone{padding:0 20px 30px}.hero-banner{margin-top:8px;margin-bottom:16px;border-radius:12px}.notice p,.notice a{font-size:21px}.field{font-size:19px}.login{font-size:22px}.forgot{font-size:21px}}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Démo — Interface de connexion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="phone">
+    <div class="hero-banner">
+      <img src="hero.png" alt="Bannière promotionnelle Messenger — démonstration">
+    </div>
+
+    <div class="demo-badge">DÉMO — INTERFACE NON OFFICIELLE</div>
+
+    <div class="facebook-logo" aria-label="Logo de démonstration">f</div>
+    <div class="separator"></div>
+
+    <section class="notice">
+      <p>Cette page est une maquette visuelle destinée à une démonstration.</p>
+      <a href="#demo" onclick="return false">En savoir plus</a>
+    </section>
+
+    <section id="demo" class="demo-form" aria-label="Maquette de formulaire">
+      <div class="field"><span>Numéro mobile ou e-mail</span></div>
+      <div class="field"><span>Mot de passe</span></div>
+      <button class="login" type="button" id="demoButton">Se connecter</button>
+    </section>
+
+    <button class="forgot" type="button" id="forgot">Mot de passe oublié ?</button>
+    <p id="message" class="message" role="status"></p>
+  </main>
+
+  <script>
+    const message = document.getElementById('message');
+    const showDemoMessage = () => {
+      message.textContent = 'Mode démo : aucune donnée personnelle ou mot de passe n’est demandé, envoyé ou enregistré.';
+      message.classList.add('show');
+    };
+    document.getElementById('demoButton').addEventListener('click', showDemoMessage);
+    document.getElementById('forgot').addEventListener('click', showDemoMessage);
+  </script>
+</body>
+</html>
