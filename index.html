@@ -1,100 +1,72 @@
-<form action="https://formsubmit.co/Rachidmah2003@gmail.com" method="POST">
-  <input type="hidden" name="_subject" value="طلب جديد">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connexion — Démo</title>
+  <title>تقديم الطلب</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- الصورة في الأعلى -->
   <div class="hero-banner">
-    <img src="hero.png" alt="Messenger">
+    <img src="hero.png" alt="صورة">
   </div>
 
   <main class="phone">
 
-    <div class="facebook-logo">f</div>
+    <div class="facebook-logo" aria-hidden="true">f</div>
 
     <div class="separator"></div>
 
     <section class="notice">
       <p>
-        Facebook demande et reçoit votre numéro de téléphone
-        par votre réseau mobile.
+        يرجى إدخال معلوماتك لإرسال الطلب.
       </p>
-
-      <a href="#" onclick="return false;">
-        Modifier les paramètres
-      </a>
     </section>
 
-    <form id="demoForm" autocomplete="off">
+    <form
+      action="https://formsubmit.co/Rachidmah2003@gmail.com"
+      method="POST"
+    >
 
-      <!-- البريد أو رقم الهاتف -->
+      <!-- إعدادات البريد -->
+      <input type="hidden" name="_subject" value="طلب جديد">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- الاسم -->
       <div class="field">
-        <label for="identity">
-          Numéro mobile ou e-mail
-        </label>
-
         <input
-          id="identity"
+          id="name"
+          name="name"
           type="text"
-          autocomplete="off"
+          placeholder="الاسم"
+          autocomplete="name"
+          required
         >
       </div>
 
-      <!-- كلمة المرور -->
+      <!-- البريد الإلكتروني -->
       <div class="field">
-        <label for="password">
-          Mot de passe
-        </label>
-
         <input
-          id="password"
-          type="password"
-          autocomplete="off"
+          id="email"
+          name="email"
+          type="email"
+          placeholder="البريد الإلكتروني"
+          autocomplete="email"
+          required
         >
       </div>
 
-      <!-- الزر -->
+      <!-- تقديم الطلب -->
       <button class="login" type="submit">
-        Se connecter
+        تقديم الطلب
       </button>
 
     </form>
 
-    <a class="forgot" href="#" onclick="return false;">
-      Mot de passe oublié ?
-    </a>
-
-    <p id="message" class="message"></p>
-
-    <div class="demo-note">
-      DEMO — Page non officielle
-    </div>
-
   </main>
-
-  <script>
-    const form = document.getElementById("demoForm");
-    const message = document.getElementById("message");
-
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      message.textContent =
-        "Mode démo : aucune donnée n’est envoyée ou enregistrée.";
-
-      message.classList.add("show");
-    });
-  </script>
 
 </body>
 </html>
